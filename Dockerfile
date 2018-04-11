@@ -1,28 +1,17 @@
 FROM php:7.2.3-apache-stretch
 
-# Install "git" and "lib*-dev" packages which are necessary to GRAV installation.
-# Also install "debconf-utils" and "locales" are for changing locale. (e.g. ja_JP.UTF-8)
+# Install "git" and "lib*-dev" packages for GRAV installation.
+# Also "sass" for compiling scss to css.
 RUN apt-get update && apt-get install -y \
     git \
     libjpeg62-turbo-dev libpng-dev libfreetype6-dev \
-    debconf-utils locales \
+    sass \
   && rm -rf /var/lib/apt/lists/* \
   && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
   && docker-php-ext-install -j$(nproc) gd zip
 
-# Set Language & Encoding for OS (Default: ja_JP.UTF-8 UTF-8).
-# You can change these values by docker-compose.yml.
-ARG LOCALE_LANGUAGE=ja_JP.UTF-8
-ARG LOCALE_ENCODING=UTF-8
-
-# Configure Locale.
-ENV DEBIAN_FRONTEND noninteractive
-RUN echo "${LOCALE_LANGUAGE} ${LOCALE_ENCODING}" >> /etc/locale.gen
-RUN locale-gen ${LOCALE_LANGUAGE}
-RUN dpkg-reconfigure locales
-RUN update-locale LANG=${LOCALE_LANGUAGE}
-ENV LC_ALL ${LOCALE_LANGUAGE}
-ENV LANG ${LOCALE_LANGUAGE}
+## Set "C.UTF-8" for UTF-8 Support. (e.g. Japanese.)
+ENV LC_ALL C.UTF-8
 
 # Configure Apache
 COPY etc/apache2/sites-available/grav.conf /etc/apache2/sites-available/grav.conf
