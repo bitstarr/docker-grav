@@ -11,8 +11,6 @@ services:
         ADMIN_PERMISSIONS: b
         ADMIN_FULLNAME: "Sandra Bullock"
         ADMIN_TITLE: Administrator
-        LOCALE_LANGUAGE: ja_JP.UTF-8
-        LOCALE_ENCODING: UTF-8
     tty: true
     container_name: grav
     volumes:
