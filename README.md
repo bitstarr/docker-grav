@@ -46,8 +46,6 @@ You can change settings by editing `docker-compose.yml`. All arguments are shown
 | ADMIN_PERMISSIONS | b                 |
 | ADMIN_FULLNAME    | Sandra Bullock    |
 | ADMIN_TITLE       | Administrator     |
-| LOCALE_LANGUAGE   | ja_JP.UTF-8       |
-| LOCALE_ENCODING   | UTF-8             |
 
 ## License
 
