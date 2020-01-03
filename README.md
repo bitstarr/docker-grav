@@ -39,13 +39,13 @@ You can change settings by editing `docker-compose.yml`. All arguments are shown
 
 | args              | Default Value     |
 | ----------------- | ----------------- |
-| GRAV_VERSION      | 1.4.2             |
-| ADMIN_USER        | admin             |
-| ADMIN_PASSWORD    | 0Gravity          |
-| ADMIN_EMAIL       | admin@example.com |
+| GRAV_VERSION      | 1.6.19            |
+| ADMIN_USER        | dev               |
+| ADMIN_PASSWORD    | Developer1       |
+| ADMIN_EMAIL       | dev@dev.dev      |
 | ADMIN_PERMISSIONS | b                 |
-| ADMIN_FULLNAME    | Sandra Bullock    |
-| ADMIN_TITLE       | Administrator     |
+| ADMIN_FULLNAME    | Hagbard Celine    |
+| ADMIN_TITLE       | God               |
 
 ## License
 

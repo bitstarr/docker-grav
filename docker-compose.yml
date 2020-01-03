@@ -4,19 +4,19 @@ services:
     build:
       context: .
       args:
-        GRAV_VERSION: 1.4.2
-        ADMIN_USER: admin
-        ADMIN_PASSWORD: 0Gravity
-        ADMIN_EMAIL: admin@example.com
+        GRAV_VERSION: 1.6.19
+        ADMIN_USER: dev
+        ADMIN_PASSWORD: Developer1
+        ADMIN_EMAIL: ev@dev.dev
         ADMIN_PERMISSIONS: b
-        ADMIN_FULLNAME: "Sandra Bullock"
-        ADMIN_TITLE: Administrator
+        ADMIN_FULLNAME: "Hagbard Celine"
+        ADMIN_TITLE: God
     tty: true
     container_name: grav
     volumes:
-      - grav:/var/www/grav/
+      - grav:/var/www/html/
     ports:
-      - "80:80"
+      - "8000:80"
     logging:
       driver: "json-file"
       options:
