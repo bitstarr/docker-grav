@@ -1,0 +1,32 @@
+# OS Generated
+.DS_Store*
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Icon?
+Thumbs.db
+*.swp\
+
+# Development Files
+*.map
+*.log
+
+# Grav Specific
+.sass-cache
+composer.lock
+app/cache/*
+app/assets/*
+app/logs/*
+app/images/*
+app/user/data/*
+
+# Dependencies       #
+######################
+node_modules
+node_modules/
+.package-lock.json
+yarn.lock
+
+

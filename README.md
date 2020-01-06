@@ -12,7 +12,7 @@ Docker files for Grav CMS installation.
 ### Installing
 
 ```
-$ git clone https://github.com/yosukeo/docker-grav.git
+$ git clone https://github.com/bitstarr/docker-grav
 $ cd docker-grav
 $ docker-compose build
 ```
@@ -39,13 +39,17 @@ You can change settings by editing `docker-compose.yml`. All arguments are shown
 
 | args              | Default Value     |
 | ----------------- | ----------------- |
-| GRAV_VERSION      | 1.6.19            |
+| GRAV_VERSION      | latest            |
 | ADMIN_USER        | dev               |
 | ADMIN_PASSWORD    | Developer1       |
 | ADMIN_EMAIL       | dev@dev.dev      |
 | ADMIN_PERMISSIONS | b                 |
 | ADMIN_FULLNAME    | Hagbard Celine    |
 | ADMIN_TITLE       | God               |
+
+## Usage
+
+After first startup there will be a folder ``app`` which contains the grav root directory.
 
 ## License
 

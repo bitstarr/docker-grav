@@ -4,14 +4,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        GRAV_VERSION: latest
-        ADMIN_USER: dev
-        ADMIN_PASSWORD: Developer1
-        ADMIN_EMAIL: dev@dev.dev
-        ADMIN_PERMISSIONS: b
-        ADMIN_FULLNAME: "Hagbard Celine"
-        ADMIN_TITLE: God
     tty: true
     container_name: grav
     volumes:
