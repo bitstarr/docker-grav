@@ -3,18 +3,19 @@ services:
   grav:
     build:
       context: .
+      dockerfile: Dockerfile
       args:
-        GRAV_VERSION: 1.6.19
+        GRAV_VERSION: latest
         ADMIN_USER: dev
         ADMIN_PASSWORD: Developer1
-        ADMIN_EMAIL: ev@dev.dev
+        ADMIN_EMAIL: dev@dev.dev
         ADMIN_PERMISSIONS: b
         ADMIN_FULLNAME: "Hagbard Celine"
         ADMIN_TITLE: God
     tty: true
     container_name: grav
     volumes:
-      - grav:/var/www/html/
+      - ./app:/var/www/html
     ports:
       - "8000:80"
     logging:
@@ -25,6 +26,11 @@ services:
     networks:
       - default
     restart: always
-volumes:
-  grav:
-    external: false
+    environment:
+      GRAV_VERSION: latest
+      ADMIN_USER: dev
+      ADMIN_PASSWORD: Developer1
+      ADMIN_EMAIL: dev@dev.dev
+      ADMIN_PERMISSIONS: b
+      ADMIN_FULLNAME: "Hagbard Celine"
+      ADMIN_TITLE: God
